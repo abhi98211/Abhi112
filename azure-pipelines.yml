@@ -16,21 +16,19 @@ stages:
      steps:
      - bash: echo built 1stjob
      - bash: echo $(Test)
- - stage: qa
-   jobs:
-   - job: jobq
-     steps:
-     - bash: echo yes done
- - stage: test
-   dependsOn:
-   - qa
-   jobs:
-   - job: jobq
-     steps:
-     - bash: echo yes test
- - stage: deploy
-   jobs: 
-   - job : job2
-     steps:
-     - bash: echo deploy 1st job
+     - bash: echo $(Build.ArtifactStagingDirectory)
+     - bash: ls -R $(System.DefaultWorkingDirectory)
+     - task: CopyFiles@2
+       inputs:
+         SourceFolder: '$(System.DefaultWorkingDirectory)'
+         Contents: '**/'
+         TargetFolder: '$(build.artifactstagingdirectory)'
+     - task: PublishBuildArtifacts@1
+       inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'Abhi'
+        publishLocation: 'Container'
+    
+
+
 
