@@ -26,5 +26,5 @@ stages:
         containerRegistry: 'DockerTest'
         repository: 'testing'
         command: 'buildAndPush'
-        Dockerfile: '**/Dockerfile'
+        Dockerfile: '**/AzureDockerfile'
         tags: '$(tag)'
