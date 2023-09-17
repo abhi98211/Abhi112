@@ -6,15 +6,8 @@
 trigger:
 - master
 
-strategy:
-  matrix:
-    linux:
-      operatingSystem: 'ubuntu-latest'
-    mac:
-      operatingSystem: 'macos- latest'
-
 pool:
-  vmImage: $(operatingSystem)
+  vmImage: 'ubantu-latest'
 
 stages:
  - stage: built
