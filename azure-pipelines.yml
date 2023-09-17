@@ -21,7 +21,7 @@ stages:
      - task: CopyFiles@2
        inputs:
          SourceFolder: '$(System.DefaultWorkingDirectory)'
-         Contents: '**/'
+         Contents: '**/*.War'
          TargetFolder: '$(build.artifactstagingdirectory)'
      - task: PublishBuildArtifacts@1
        inputs:
