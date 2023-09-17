@@ -14,7 +14,7 @@ strategy:
       operatingSystem: 'macos-latest'
 
 pool:
-  vmImage: $(operatingsystem)
+  vmImage: $(operatingSystem)
 
 stages:
  - stage: built
