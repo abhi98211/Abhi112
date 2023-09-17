@@ -22,7 +22,6 @@ stages:
      - bash: echo yes done
  - stage: test
    dependsOn:
-   - deploy
    - qa
    jobs:
    - job: jobq
