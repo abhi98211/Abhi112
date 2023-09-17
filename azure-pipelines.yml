@@ -7,7 +7,7 @@ trigger:
 - master
 
 strategy:
-  matix:
+  matrix:
     linux:
       operatingSystem: 'ubuntu-latest'
     mac:
