@@ -21,14 +21,14 @@ stages:
      steps:
      - bash: echo yes done
  - stage: test
+   dependsOn:
+   - deploy
+   - qa
    jobs:
    - job: jobq
      steps:
      - bash: echo yes test
  - stage: deploy
-   dependsOn:
-   - qa
-   - test
    jobs: 
    - job : job2
      steps:
